@@ -5,8 +5,11 @@ export class UpdateTodoDto {
   @IsInt()
   @IsNotEmpty()
   @IsPositive()
-  id: number;
+  source: number;
 
-  @IsEnum(TodoStatus, { message: 'Invalid status' })
+  @IsInt()
+  target: number;
+
+  @IsEnum(TodoStatus)
   status: TodoStatus;
 }

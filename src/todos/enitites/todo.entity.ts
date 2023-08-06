@@ -20,6 +20,9 @@ export class Todo {
   status: TodoStatus;
 
   @Column()
+  position: number;
+
+  @Column()
   fromUser: number;
   @ManyToOne(() => User, (user) => user.todos)
   @JoinColumn({ name: 'fromUser' })
