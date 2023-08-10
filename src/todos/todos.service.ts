@@ -81,6 +81,7 @@ export class TodosService {
     const remainingTodos = todos.filter(
       (todo) => todo.id !== source && todo.status !== status,
     );
+    console.log(remainingTodos);
 
     if (targetedTodo) {
       const insertIndex = updatedTodos.indexOf(targetedTodo);
@@ -95,6 +96,7 @@ export class TodosService {
       remainingTodos.forEach((todo, index) => {
         todo.position = index + 1;
       });
+      console.log(remainingTodos);
 
       await this.repoService.save(updatedTodos);
     } else {
